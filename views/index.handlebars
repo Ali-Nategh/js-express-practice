@@ -37,6 +37,7 @@
         fetch(`http://localhost:5000/api/members/${id}`, 
             {method:'DELETE'}
         )
+        window.location.reload();
     });
 
     updBtn.addEventListener('click', () => {
@@ -51,5 +52,6 @@
             body: JSON.stringify(user)
             }
         );
+        window.location.reload();
     });
 </script>

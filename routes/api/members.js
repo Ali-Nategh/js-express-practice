@@ -43,9 +43,8 @@ router.put('/:id', (req, res) => {
         const updateMember = req.body;
         members.forEach(member => {
             if(`${member.id}` === req.params.id) {
-                member.name = updateMember.name ? updateMember.name: member.name;
-                member.email = updateMember.email ? updateMember.email: member.email;
-
+                member.name = (updateMember.name && updateMember.name != "null") ? updateMember.name: member.name;
+                member.email = (updateMember.email && updateMember.email != "null") ? updateMember.email: member.email;
                 res.json({ msg: 'Member Updated', member})
             };
         });
