@@ -34,7 +34,7 @@
     
     delBtn.addEventListener('click', () => {
         const id = prompt('ID:');
-        fetch(`http://localhost:5000/api/members/${id}`, 
+        fetch(`${window.location.href}api/members/${id}`, 
             {method:'DELETE'}
         )
         window.location.reload();
@@ -46,7 +46,7 @@
             name: `${prompt('Name:')}`,
             email: `${prompt('Email:')}`
         }
-        fetch(`http://localhost:5000/api/members/${id}`, 
+        fetch(`${window.location.href}api/members/${id}`, 
             {method:'PUT',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(user)
